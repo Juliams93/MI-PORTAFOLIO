@@ -38,16 +38,10 @@ const ProjectsSection = ({ isDarkMode }) => (
           <div className="space-y-6">
             {[
               {
-                title: "E-commerce Moderno",
-                tech: ["React", "Node.js", "MongoDB"],
-                description: "Plataforma de comercio electrónico con carrito de compras, pagos seguros y panel de administración.",
-                features: ["Autenticación JWT", "Pasarela de pagos", "Dashboard admin"]
-              },
-              {
-                title: "App de Gestión de Tareas",
-                tech: ["React", "Express", "PostgreSQL"],
-                description: "Aplicación colaborativa para gestión de proyectos con funcionalidades en tiempo real.",
-                features: ["WebSockets", "Notificaciones", "Kanban Board"]
+                title: "Ada y Byte - Aventura interactiva",
+                tech: ["Html", "Css", "Javascript"],
+                description: "Juego educativo para que los niños aprendan a programar de forma divertida.",
+                features: []
               },
               {
                 title: "Portfolio Interactivo",
