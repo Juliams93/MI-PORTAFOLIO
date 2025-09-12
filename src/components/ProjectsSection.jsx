@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion'
 import { Globe, BarChart3 } from 'lucide-react'
 

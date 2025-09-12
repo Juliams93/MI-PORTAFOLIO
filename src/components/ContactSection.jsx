@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Copy, Check } from 'lucide-react'
 import { useState } from 'react'
