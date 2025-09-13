@@ -42,7 +42,7 @@ const ProjectsSection = ({ isDarkMode }) => (
                 tech: ["React", "Vite"],
                 description: "Juego educativo para que los niños aprendan a programar de forma divertida.",
                 features: ["Animaciones SVG", "Niveles progresivos", "Sistema de recompensas"],
-                demoUrl: "https://vercel.com/julia-marin-salas-projects/ada-byte-codeadventure",
+                demoUrl: "https://ada-byte-codeadventure.vercel.app/",
                 codeUrl: "https://github.com/Juliams93/Ada-byte-codeadventure/tree/main/ada-byte-aventura"
               },
               {
