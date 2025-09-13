@@ -164,7 +164,8 @@ const ProjectsSection = ({ isDarkMode }) => (
                 title: "Análisis de Ventas",
                 tech: ["Python", "Pandas", "Plotly"],
                 description: "Dashboard interactivo para análisis de tendencias de ventas y predicción de demanda.",
-                features: ["Visualizaciones dinámicas", "Modelos predictivos", "KPIs en tiempo real"]
+                features: ["Visualizaciones dinámicas", "Modelos predictivos", "KPIs en tiempo real"],
+                codeUrl: "https://github.com/Juliams93/Analisis-ventas/tree/main"
               },
               {
                 title: "Segmentación de Clientes",
