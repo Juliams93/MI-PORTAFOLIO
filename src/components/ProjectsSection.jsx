@@ -39,15 +39,19 @@ const ProjectsSection = ({ isDarkMode }) => (
             {[
               {
                 title: "Ada y Byte - Aventura interactiva",
-                tech: ["Html", "Css", "Javascript"],
+                tech: ["React", "Vite"],
                 description: "Juego educativo para que los niños aprendan a programar de forma divertida.",
-                features: []
+                features: ["Animaciones SVG", "Niveles progresivos", "Sistema de recompensas"],
+                demoUrl: "https://vercel.com/julia-marin-salas-projects/ada-byte-codeadventure",
+                codeUrl: "https://github.com/Juliams93/Ada-byte-codeadventure/tree/main/ada-byte-aventura"
               },
               {
                 title: "Portfolio Interactivo",
                 tech: ["React", "Framer Motion", "Tailwind"],
                 description: "Sitio web personal con animaciones avanzadas y modo oscuro/claro.",
-                features: ["Animaciones CSS", "Responsive Design", "Theme Toggle"]
+                features: ["Animaciones CSS", "Responsive Design", "Theme Toggle"],
+                demoUrl: "https://mi-portafolio-beige-zeta.vercel.app/",
+                codeUrl: "https://github.com/Juliams93/MI-PORTAFOLIO"
               }
             ].map((project, index) => (
               <motion.div
@@ -88,24 +92,54 @@ const ProjectsSection = ({ isDarkMode }) => (
                   ))}
                 </ul>
                 <div className="flex gap-3 mt-4">
-                  <motion.button 
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Ver Demo
-                  </motion.button>
-                  <motion.button 
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isDarkMode 
-                        ? 'border border-white/30 text-white hover:bg-white/10' 
-                        : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Ver Código
-                  </motion.button>
+                  {project.demoUrl ? (
+                    <motion.a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Ver Demo
+                    </motion.a>
+                  ) : (
+                    <motion.button 
+                      className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Ver Demo
+                    </motion.button>
+                  )}
+                  {project.codeUrl ? (
+                    <motion.a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        isDarkMode 
+                          ? 'border border-white/30 text-white hover:bg-white/10' 
+                          : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
+                      } flex items-center justify-center`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Ver Código
+                    </motion.a>
+                  ) : (
+                    <motion.button 
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        isDarkMode 
+                          ? 'border border-white/30 text-white hover:bg-white/10' 
+                          : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Ver Código
+                    </motion.button>
+                  )}
                 </div>
               </motion.div>
             ))}
