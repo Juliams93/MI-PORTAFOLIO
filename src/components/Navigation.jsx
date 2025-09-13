@@ -17,7 +17,7 @@ const Navigation = ({ isDarkMode, activeSection, setActiveSection, toggleTheme }
             isDarkMode ? 'text-white' : 'text-slate-900'
           }`}
         >
-          Julia.dev
+          Jm-devdata.com
         </motion.div>
         <div className="flex items-center space-x-6">
           <div className="hidden md:flex space-x-8">
