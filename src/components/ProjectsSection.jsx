@@ -52,7 +52,22 @@ const ProjectsSection = ({ isDarkMode }) => (
                 features: ["Animaciones CSS", "Responsive Design", "Theme Toggle"],
                 demoUrl: "https://mi-portafolio-beige-zeta.vercel.app/",
                 codeUrl: "https://github.com/Juliams93/MI-PORTAFOLIO"
-              }
+              },
+              {
+                title: "Weather app",
+                tech: ["React", "Vite", "ESLint", "OpenWeatherMap API"],
+                description: "¡Bienvenido a Weather App!\nUna aplicación web desarrollada con React y Vite para consultar el clima actual de cualquier ciudad del mundo.",
+                features: [
+                  "Consulta el clima en tiempo real por ciudad.",
+                  "Interfaz moderna y responsiva.",
+                  "Actualización instantánea gracias a Vite + React.",
+                  "Código limpio y modular."
+                ],
+                demoUrl: "https://weather-app-dusky-six-72.vercel.app/",
+                codeUrl: "https://github.com/Juliams93/Weather-app"
+              },
+
+
             ].map((project, index) => (
               <motion.div
                 key={project.title}
@@ -168,17 +183,14 @@ const ProjectsSection = ({ isDarkMode }) => (
                 codeUrl: "https://github.com/Juliams93/Analisis-ventas/tree/main"
               },
               {
-                title: "Segmentación de Clientes",
-                tech: ["Python", "Scikit-learn", "Tableau"],
-                description: "Análisis de comportamiento de clientes usando clustering y machine learning.",
-                features: ["K-means clustering", "RFM Analysis", "Customer Lifetime Value"]
+                title: "Análisis tendencias netflix",
+                tech: ["Python", "seaborn", "Tableau"],
+                description: "Análisis de tendencias y patrones de visualización en Netflix.",
+                features: ["Análisis exploratorio", "Visualizaciones avanzadas", "Insights accionables"],
+                codeUrl: "https://github.com/Juliams93/Proyecto-Netflix-Tableau"
+                
               },
-              {
-                title: "Análisis de Sentimientos",
-                tech: ["Python", "NLP", "MongoDB"],
-                description: "Procesamiento de texto para análisis de opiniones en redes sociales.",
-                features: ["Text Mining", "Sentiment Classification", "Word Clouds"]
-              }
+              
             ].map((project, index) => (
               <motion.div
                 key={project.title}
@@ -218,24 +230,22 @@ const ProjectsSection = ({ isDarkMode }) => (
                   ))}
                 </ul>
                 <div className="flex gap-3 mt-4">
-                  <motion.button 
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Ver Análisis
-                  </motion.button>
-                  <motion.button 
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isDarkMode 
-                        ? 'border border-white/30 text-white hover:bg-white/10' 
-                        : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Ver Notebook
-                  </motion.button>
+                  {project.codeUrl && (
+                    <motion.a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        isDarkMode 
+                          ? 'border border-white/30 text-white hover:bg-white/10' 
+                          : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
+                      } flex items-center justify-center`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Ver Código
+                    </motion.a>
+                  )}
                 </div>
               </motion.div>
             ))}
