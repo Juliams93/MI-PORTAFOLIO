@@ -4,9 +4,9 @@ import { Github, Linkedin, Mail, Copy, Check } from 'lucide-react'
 import { useState } from 'react'
 
 const socials = [
-  { icon: Github, href: 'https://github.com/juliams93', label: 'GitHub', color: 'hover:bg-gray-600' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/julia-marín-salas-b20167309', label: 'LinkedIn', color: 'hover:bg-blue-600' },
-  { icon: Mail, href: 'mailto:jul.ms1193@gmail.com', label: 'E-mail', color: 'hover:bg-purple-600' }
+  { icon: Github, href: 'https://github.com/juliams93', label: 'GitHub', color: 'hover:bg-purple-500/80 dark:hover:bg-purple-400/40' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/julia-marín-salas-b20167309', label: 'LinkedIn', color: 'hover:bg-blue-500/80 dark:hover:bg-blue-400/40' },
+  { icon: Mail, href: 'mailto:jul.ms1193@gmail.com', label: 'E-mail', color: 'hover:bg-pink-500/80 dark:hover:bg-pink-400/40' }
 ]
 
 const ContactSection = ({ isDarkMode, handleSubmit, handleInputChange, formData }) => {
@@ -122,7 +122,11 @@ const ContactSection = ({ isDarkMode, handleSubmit, handleInputChange, formData 
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                  className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 border text-white 
+                    ${isDarkMode
+                      ? 'bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-500 hover:to-pink-500 border-purple-400'
+                      : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-purple-400'}
+                  `}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -162,7 +166,9 @@ const ContactSection = ({ isDarkMode, handleSubmit, handleInputChange, formData 
                     rel="noopener noreferrer"
                   >
                     <span className="flex items-center">
-                      <social.icon className="w-6 h-6 mr-4" />
+                      <motion.span whileHover={{ rotate: 20, scale: 1.15 }} transition={{ type: 'spring', stiffness: 300, damping: 12 }}>
+                        <social.icon className="w-6 h-6 mr-4" />
+                      </motion.span>
                       <span className="font-medium">{social.label}</span>
                     </span>
                     <button

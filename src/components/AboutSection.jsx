@@ -62,7 +62,8 @@ const AboutSection = ({ isDarkMode }) => (
                                                         <span role="img" aria-label="spark">✨</span>
                                                         <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>¿Por qué tech y datos?</span>
                                                     </div>
-                                                    <ul className={`list-disc pl-6 text-base ${isDarkMode ? 'text-white/80' : 'text-slate-700'}`}>
+                                                    <ul className={`list-disc pl-6 text-base ${isDarkMode ? 'text-white/80' : 'text-slate-700'}`}
+                                                        style={{ marginLeft: '15px', textAlign: 'left' }}>
                                                         <li>Me fascina descubrir historias ocultas en los datos <span role="img" aria-label="chart">📊</span></li>
                                                         <li>Disfruto transformar ideas en productos digitales útiles <span role="img" aria-label="rocket">🚀</span></li>
                                                         <li>Creo que la creatividad y el análisis son el mejor equipo <span role="img" aria-label="bulb">💡</span></li>

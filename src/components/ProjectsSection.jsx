@@ -132,11 +132,11 @@ const ProjectsSection = ({ isDarkMode }) => (
                       href={project.codeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isDarkMode 
-                          ? 'border border-white/30 text-white hover:bg-white/10' 
-                          : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
-                      } flex items-center justify-center`}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center border
+                        ${isDarkMode
+                          ? 'border-blue-400 text-white bg-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white'
+                          : 'border-blue-400 text-blue-900 bg-blue-100 hover:bg-gradient-to-r hover:from-blue-300 hover:to-purple-200 hover:text-blue-900'}
+                      `}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -235,11 +235,11 @@ const ProjectsSection = ({ isDarkMode }) => (
                       href={project.codeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isDarkMode 
-                          ? 'border border-white/30 text-white hover:bg-white/10' 
-                          : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
-                      } flex items-center justify-center`}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors border flex items-center justify-center 
+                        ${isDarkMode
+                          ? 'border-blue-400 text-white bg-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white'
+                          : 'border-blue-400 text-blue-900 bg-blue-100 hover:bg-gradient-to-r hover:from-blue-300 hover:to-purple-200 hover:text-blue-900'}
+                      `}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

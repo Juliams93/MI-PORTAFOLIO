@@ -3,6 +3,77 @@
   min-height: 100vh;
   padding: 2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  animation: moveLight 10s ease-in-out infinite alternate;
+}
+
+/* Efecto para modo oscuro: blanco translúcido */
+
+.dark .animated-bg {
+  background: none;
+}
+
+.dark .animated-bg::before,
+.dark .animated-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+.dark .animated-bg::before {
+  width: 480px;
+  height: 480px;
+  top: -120px;
+  left: -120px;
+  background: #a78bfa;
+  animation: blobMove1 18s ease-in-out infinite alternate;
+}
+.dark .animated-bg::after {
+  width: 380px;
+  height: 380px;
+  bottom: -100px;
+  right: -100px;
+  background: #f472b6;
+  animation: blobMove2 22s ease-in-out infinite alternate;
+}
+
+@keyframes blobMove1 {
+  0% { transform: scale(1) translate(0,0); }
+  100% { transform: scale(1.2) translate(80px, 60px); }
+}
+@keyframes blobMove2 {
+  0% { transform: scale(1) translate(0,0); }
+  100% { transform: scale(1.1) translate(-60px, -40px); }
+}
+
+/* Efecto para modo claro: colores suaves */
+.light .animated-bg {
+  background: radial-gradient(ellipse 60% 40% at 30% 30%, rgba(167,139,250,0.13) 0%, transparent 80%),
+              radial-gradient(ellipse 40% 60% at 70% 70%, rgba(244,114,182,0.10) 0%, transparent 80%);
+}
+
+@keyframes moveLight {
+  0% {
+    background-position: 30% 30%, 70% 70%;
+  }
+  100% {
+    background-position: 40% 40%, 60% 60%;
+  }
 }
 
 .logo {
