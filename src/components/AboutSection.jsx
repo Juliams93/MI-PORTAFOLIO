@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { Heart, GraduationCap, Award, Target } from 'lucide-react'
 
@@ -57,23 +57,22 @@ const AboutSection = ({ isDarkMode }) => (
                                 Mi Historia
                             </h3>
                         </div>
-                        <p
-                            className={`text-lg leading-relaxed mb-4 transition-colors ${
-                                isDarkMode ? 'text-white/80' : 'text-slate-700'
-                            }`}
-                        >
-                            Mi interés por la tecnología nació cuando descubrí cómo los datos pueden contar historias fascinantes, revelando patrones ocultos y ofreciendo perspectivas que transforman la forma en que entendemos el mundo. 
-                            En paralelo, comprendí cómo el código es capaz de dar vida a ideas creativas, convirtiéndolas en productos digitales útiles, visuales y accesibles para las personas.
-                        </p>
-                        <p
-                            className={`text-lg leading-relaxed transition-colors ${
-                                isDarkMode ? 'text-white/80' : 'text-slate-700'
-                            }`}
-                        >
-                            A lo largo de mi formación en Neoland y durante mi bootcamp especializado en análisis de datos, he cultivado una visión que combina lo mejor de dos mundos: el desarrollo web y la ciencia de datos.
-                            Esta doble perspectiva me permite abordar los proyectos desde una mirada integral, uniendo el diseño y la experiencia de usuario con el rigor analítico y la capacidad de transformar información en decisiones estratégicas.
-                            Me motiva trabajar en soluciones que no solo respondan a necesidades técnicas, sino que también aporten valor humano y empresarial. Creo firmemente que la creatividad y el análisis son aliados inseparables, y mi objetivo es seguir construyendo proyectos que faciliten la vida de las personas, potencien la innovación y contribuyan al crecimiento sostenible de las organizaciones.
-                        </p>
+                                                <div className={`space-y-3 mb-4`}>
+                                                    <div className="flex items-center gap-2">
+                                                        <span role="img" aria-label="spark">✨</span>
+                                                        <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>¿Por qué tech y datos?</span>
+                                                    </div>
+                                                    <ul className={`list-disc pl-6 text-base ${isDarkMode ? 'text-white/80' : 'text-slate-700'}`}>
+                                                        <li>Me fascina descubrir historias ocultas en los datos <span role="img" aria-label="chart">📊</span></li>
+                                                        <li>Disfruto transformar ideas en productos digitales útiles <span role="img" aria-label="rocket">🚀</span></li>
+                                                        <li>Creo que la creatividad y el análisis son el mejor equipo <span role="img" aria-label="bulb">💡</span></li>
+                                                    </ul>
+                                                    <div className="flex items-center gap-2 mt-4">
+                                                        <span role="img" aria-label="target">🎯</span>
+                                                        <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>¿Mi meta?</span>
+                                                    </div>
+                                                    <p className={`text-base ${isDarkMode ? 'text-white/80' : 'text-slate-700'}`}>Crear soluciones que ayuden a personas y empresas a crecer, mezclando tecnología, datos y mucha pasión.</p>
+                                                </div>
                     </div>
                 </motion.div>
 

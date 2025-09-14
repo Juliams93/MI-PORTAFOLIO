@@ -56,7 +56,7 @@ const ContactSection = ({ isDarkMode, handleSubmit, handleInputChange, formData 
               <h3 className={`text-2xl font-bold mb-6 transition-colors ${
                 isDarkMode ? 'text-white' : 'text-slate-900'
               }`}>Envíame un mensaje</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="mailto:jul.ms1193@gmail.com" method="POST" encType="text/plain" className="space-y-6">
                 <div>
                   <label htmlFor="name" className={`block text-sm font-medium mb-2 transition-colors ${
                     isDarkMode ? 'text-white/80' : 'text-slate-700'

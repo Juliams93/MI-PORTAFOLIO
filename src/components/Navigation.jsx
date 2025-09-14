@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import { Sun, Moon } from 'lucide-react'
 
 const Navigation = ({ isDarkMode, activeSection, setActiveSection, toggleTheme }) => (
-  <nav className={`fixed top-0 w-full z-50 backdrop-blur-lg border-b transition-colors duration-300 ${
-    isDarkMode 
-      ? 'bg-black/20 border-white/10' 
-      : 'bg-white/20 border-black/10'
-  }`}>
-    <div className="container mx-auto px-6 py-4">
+  <nav className={`fixed top-0 w-full z-50 border-b backdrop-blur-lg transition-colors duration-300
+    ${isDarkMode
+      ? 'bg-black/20 border-white/10'
+      : 'bg-white/20 border-black/10'}
+  `}>
+    <div className="w-full px-2 sm:px-6 py-2 sm:py-4 mx-0">
   <div className="flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
