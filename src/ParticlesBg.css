@@ -1,0 +1,32 @@
+/*
+  Particles background for portfolio. Subtle, animated, non-intrusive. 
+  Uses only CSS and a bit of JS for random movement.
+*/
+
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+ .particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  will-change: transform, opacity;
+  transition: opacity 0.5s;
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+  mix-blend-mode: lighten;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.dark .particle {
+  background: linear-gradient(135deg, #6366f1 0%, #a21caf 100%);
+  opacity: 0.13;
+}
+
