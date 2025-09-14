@@ -56,7 +56,33 @@ const ContactSection = ({ isDarkMode, handleSubmit, handleInputChange, formData 
               <h3 className={`text-2xl font-bold mb-6 transition-colors ${
                 isDarkMode ? 'text-white' : 'text-slate-900'
               }`}>Envíame un mensaje</h3>
-              <form action="mailto:jul.ms1193@gmail.com" method="POST" encType="text/plain" className="space-y-6">
+              <form 
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.target;
+                  const data = {
+                    name: form.name.value,
+                    email: form.email.value,
+                    message: form.message.value
+                  };
+                  try {
+                    const res = await fetch('https://formspree.io/f/mrbavzab', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data)
+                    });
+                    if (res.ok) {
+                      alert('¡Mensaje enviado! Te contactaré pronto.');
+                      form.reset();
+                    } else {
+                      alert('Error al enviar. Intenta de nuevo más tarde.');
+                    }
+                  } catch {
+                    alert('Error de red. Intenta de nuevo más tarde.');
+                  }
+                }}
+                className="space-y-6"
+              >
                 <div>
                   <label htmlFor="name" className={`block text-sm font-medium mb-2 transition-colors ${
                     isDarkMode ? 'text-white/80' : 'text-slate-700'
