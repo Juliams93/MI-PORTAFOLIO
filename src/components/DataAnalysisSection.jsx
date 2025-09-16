@@ -21,7 +21,7 @@ const DataAnalysisSection = ({ isDarkMode }) => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           { 
             icon: BarChart3, 
@@ -95,7 +95,7 @@ const DataAnalysisSection = ({ isDarkMode }) => (
         <h3 className={`text-2xl font-bold mb-4 text-center transition-colors ${
           isDarkMode ? 'text-white' : 'text-slate-900'
         }`}>Metodología de Trabajo</h3>
-        <div className="grid md:grid-cols-4 gap-6 text-center">
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center overflow-x-auto md:overflow-visible">
           {[
             { step: '01', title: 'Recolección', desc: 'Obtención y limpieza de datos' },
             { step: '02', title: 'Exploración', desc: 'Análisis exploratorio y patrones' },

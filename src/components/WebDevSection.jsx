@@ -22,7 +22,7 @@ const WebDevSection = ({ isDarkMode }) => (
           Especializada en crear aplicaciones web modernas, escalables y centradas en la experiencia del usuario
         </p>
       </motion.div>
-      <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible">
         {[
           { 
             icon: Globe, 
