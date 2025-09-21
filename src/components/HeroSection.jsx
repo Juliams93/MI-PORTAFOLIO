@@ -60,15 +60,20 @@ const HeroSection = ({ isDarkMode }) => (
           </motion.a>
           <motion.a
             href="#contact"
-            className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-              isDarkMode 
-                ? 'border border-white/30 text-white hover:bg-white/10' 
-                : 'border border-slate-300 text-slate-900 hover:bg-slate-100'
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 border border-blue-400"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
           >
             Contacto
+          </motion.a>
+          <motion.a
+            href="/curriculum.pdf"
+            download
+            className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 border border-pink-400"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Descargar CV
           </motion.a>
         </motion.div>
       </motion.div>
