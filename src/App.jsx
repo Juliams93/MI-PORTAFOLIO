@@ -107,7 +107,7 @@ export default function App() {
 
       <section className="lvx section" id="lvx">
         <div className="section-heading split-heading"><div><p className="eyebrow">Mi proyecto personal</p><h2>LVX Studio</h2></div><p>El lugar desde el que convierto problemas cercanos en productos digitales con identidad, intención y recorrido.</p></div>
-        <div className="lvx-panel"><div className="lvx-monogram" aria-hidden="true">LVX</div><div className="lvx-copy"><p className="large-copy">No me interesa crear tecnología porque sí. Me interesa que alguien pueda usarla y pensar: <em>esto me ayuda de verdad.</em></p><div className="principles"><span><Check size={16}/> Necesidades reales</span><span><Check size={16}/> Diseño humano</span><span><Check size={16}/> Desarrollo responsable</span></div><a className="text-link" href="https://github.com/Juliams93/LVX-studio" target="_blank" rel="noreferrer">Conocer LVX Studio <ArrowRight size={17}/></a></div></div>
+        <div className="lvx-panel"><div className="lvx-monogram" aria-hidden="true">LVX</div><div className="lvx-copy"><p className="large-copy">No me interesa crear tecnología porque sí. Me interesa que alguien pueda usarla y pensar: <em>esto me ayuda de verdad.</em></p><div className="principles"><span><Check size={16}/> Necesidades reales</span><span><Check size={16}/> Diseño humano</span><span><Check size={16}/> Desarrollo responsable</span></div></div></div>
       </section>
 
       <section className="products section" id="productos">
