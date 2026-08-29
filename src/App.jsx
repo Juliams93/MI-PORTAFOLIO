@@ -10,6 +10,7 @@ const products = [
 ];
 
 const archive = [
+  { name: "GimFit Reserve", type: "Web personalizada · Reservas", description: "Una experiencia digital creada a medida para que un gimnasio pueda presentar su identidad y facilitar la reserva de actividades." },
   { name: "Ada y Byte", type: "Experiencia educativa", description: "Aventura interactiva para acercar la programación a la infancia.", demo: "https://ada-byte-codeadventure.vercel.app/", code: "https://github.com/Juliams93/Ada-byte-codeadventure/tree/main/ada-byte-aventura" },
   { name: "Weather App", type: "Aplicación web", description: "Consulta meteorológica en tiempo real mediante una API externa.", demo: "https://weather-app-dusky-six-72.vercel.app/", code: "https://github.com/Juliams93/Weather-app" },
   { name: "Análisis de ventas", type: "Datos y visualización", description: "Exploración de tendencias, indicadores y comportamiento comercial.", code: "https://github.com/Juliams93/Analisis-ventas" },
@@ -17,7 +18,7 @@ const archive = [
 ];
 
 const capabilities = [
-  { icon: Laptop, title: "Producto digital", text: "Transformo una necesidad real en una experiencia clara, útil y adaptable." },
+  { icon: Laptop, title: "Webs con identidad propia", text: "Me apasiona escuchar a cada cliente y convertir su esencia y sus necesidades en una web personalizada, útil y diferente." },
   { icon: BrainCircuit, title: "IA con propósito", text: "Exploro la IA como compañía y herramienta, con límites, privacidad y criterio humano." },
   { icon: ShieldCheck, title: "Privacidad desde el inicio", text: "Diseño separando datos sensibles, credenciales, interfaz pública y procesamiento local." },
 ];
@@ -30,7 +31,7 @@ export default function App() {
 
   return <div className="site-shell">
     <header className="topbar">
-      <a className="wordmark" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio"><span className="wordmark-mark">JM</span><span>Julia Marín</span></a>
+      <a className="wordmark" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio"><img className="wordmark-logo" src="/julia-tech-logo.png" alt=""/><span>Julia Marín</span></a>
       <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Navegación principal">
         <a href="#lvx" onClick={closeMenu}>LVX Studio</a><a href="#productos" onClick={closeMenu}>Productos</a><a href="#trayectoria" onClick={closeMenu}>Trayectoria</a><a href="#contacto" onClick={closeMenu}>Contacto</a>
       </nav>
@@ -123,9 +124,9 @@ export default function App() {
         <div className="tool-line"><span>React</span><span>TypeScript</span><span>Node.js</span><span>APIs</span><span>Python</span><span>SQL</span><span>Vite</span><span>Figma</span><span>Vercel</span></div>
       </section>
 
-      <section className="journey section" id="trayectoria"><div className="section-heading"><p className="eyebrow">Trayectoria</p><h2>Los proyectos que construyeron el camino.</h2></div><div className="archive-grid">{archive.map(project => <article className="archive-card" key={project.name}><p className="archive-type">{project.type}</p><h3>{project.name}</h3><p>{project.description}</p><div className="archive-links">{project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Demo <ChevronRight size={15}/></a>}<a href={project.code} target="_blank" rel="noreferrer">Código <ChevronRight size={15}/></a></div></article>)}</div></section>
+      <section className="journey section" id="trayectoria"><div className="section-heading"><p className="eyebrow">Trayectoria</p><h2>Los proyectos que construyeron el camino.</h2></div><div className="archive-grid">{archive.map(project => <article className="archive-card" key={project.name}><p className="archive-type">{project.type}</p><h3>{project.name}</h3><p>{project.description}</p>{(project.demo || project.code) && <div className="archive-links">{project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Demo <ChevronRight size={15}/></a>}{project.code && <a href={project.code} target="_blank" rel="noreferrer">Código <ChevronRight size={15}/></a>}</div>}</article>)}</div></section>
 
-      <section className="about section"><div className="about-number">JM</div><div className="about-copy"><p className="eyebrow">Sobre mí</p><h2>Curiosidad, sensibilidad y ganas de hacer cosas que importen.</h2><p>Mi formación une desarrollo web full stack y análisis de datos. Hoy la aplico para crear productos completos: desde la primera idea y el diseño hasta la integración técnica, la privacidad y la puesta en marcha.</p><p>FamilyHOME cambió mi manera de verme profesionalmente. Me demostró que disfruto especialmente cuando la tecnología sale de la pantalla y mejora algo concreto en la vida de una persona.</p><a className="text-link" href="/curriculum.pdf" download>Descargar currículum <ArrowRight size={17}/></a></div></section>
+      <section className="about section"><div className="about-number">JM</div><div className="about-copy"><p className="eyebrow">Sobre mí</p><h2>Curiosidad, sensibilidad y ganas de hacer cosas que importen.</h2><p>Mi formación une desarrollo web full stack y análisis de datos. Hoy la aplico para crear productos completos: desde la primera idea y el diseño hasta la integración técnica, la privacidad y la puesta en marcha.</p><p>También me apasiona crear páginas web personalizadas. Disfruto escuchando una idea, entendiendo la personalidad y las necesidades de cada cliente y convirtiéndolas en una experiencia digital útil, cuidada y diferente.</p><p>FamilyHOME cambió mi manera de verme profesionalmente. Me demostró que disfruto especialmente cuando la tecnología sale de la pantalla y mejora algo concreto en la vida de una persona.</p><a className="text-link" href="/curriculum.pdf" download>Descargar currículum <ArrowRight size={17}/></a></div></section>
 
       <section className="contact section" id="contacto"><div className="contact-copy"><p className="eyebrow">Contacto</p><h2>¿Hay una necesidad que podamos convertir en una solución?</h2><p>Estoy abierta a proyectos, colaboraciones y conversaciones sobre tecnología útil, producto digital, datos e inteligencia artificial.</p></div><div className="contact-actions"><a className="button primary" href="mailto:jul.ms1193@gmail.com"><Mail size={18}/> Escribirme</a><div className="social-links"><a href="https://github.com/Juliams93" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://linkedin.com/in/julia-marín-salas-b20167309" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div></section>
     </main>
