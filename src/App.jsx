@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BrainCircuit, Check, ChevronRight, Github, Home, Laptop, Linkedin, Mail, Menu, Moon, ShieldCheck, Sparkles, Sun, X } from "lucide-react";
+import { ArrowRight, BrainCircuit, Check, ChevronRight, Footprints, Github, Heart, Home, Laptop, Lightbulb, Linkedin, Mail, Menu, Moon, ShieldCheck, Sparkles, Sun, X } from "lucide-react";
 import "./index.css";
 
 const products = [
@@ -51,6 +51,56 @@ export default function App() {
         <motion.div className="hero-object" initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .2 }} aria-hidden="true">
           <div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="core-card"><Sparkles size={22}/><strong>Ideas que cuidan</strong><span>Diseño · Desarrollo · IA</span></div><span className="floating-label label-one">Privacidad</span><span className="floating-label label-two">Experiencia</span><span className="floating-label label-three">Propósito</span>
         </motion.div>
+      </section>
+
+      <section className="idea-map section" aria-labelledby="idea-map-title">
+        <div className="idea-map-heading">
+          <p className="eyebrow">Así nacen mis proyectos</p>
+          <h2 id="idea-map-title">Mi mapa de ideas</h2>
+          <p>No empiezo pensando en una tecnología. Empiezo observando algo que podría sentirse mejor.</p>
+        </div>
+
+        <div className="map-canvas">
+          <svg className="map-lines" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M135 120 C 280 110, 295 220, 445 220 S 665 105, 820 125" />
+            <path d="M140 350 C 285 355, 300 245, 445 240 S 675 350, 835 335" />
+          </svg>
+
+          <article className="idea-note note-care">
+            <Heart size={22} />
+            <span className="note-step">Observo</span>
+            <strong>“Quiero cuidar a mi familia.”</strong>
+          </article>
+          <article className="idea-note note-walk">
+            <Footprints size={22} />
+            <span className="note-step">Escucho</span>
+            <strong>“No quiero caminar sola.”</strong>
+          </article>
+
+          <div className="idea-center">
+            <Lightbulb size={27} />
+            <strong>¿Y si pudiera ayudar?</strong>
+            <span>Investigo · dibujo · pruebo</span>
+          </div>
+
+          <article className="idea-result result-home">
+            <span>La idea se convierte en</span>
+            <strong>FamilyHOME</strong>
+            <small>cuidar dentro de casa</small>
+          </article>
+          <article className="idea-result result-walk">
+            <span>La idea se convierte en</span>
+            <strong>SafeWalk</strong>
+            <small>acompañar fuera de casa</small>
+          </article>
+
+          <div className="open-question">
+            <Sparkles size={18} />
+            <span>¿Qué problema cotidiano resolveré después?</span>
+          </div>
+          <span className="scribble scribble-one">aquí empieza todo ↗</span>
+          <span className="scribble scribble-two">probar también es crear</span>
+        </div>
       </section>
 
       <section className="lvx section" id="lvx">
