@@ -129,6 +129,6 @@ export default function App() {
 
       <section className="contact section" id="contacto"><div className="contact-copy"><p className="eyebrow">Contacto</p><h2>¿Hay una necesidad que podamos convertir en una solución?</h2><p>Estoy abierta a proyectos, colaboraciones y conversaciones sobre tecnología útil, producto digital, datos e inteligencia artificial.</p></div><div className="contact-actions"><a className="button primary" href="mailto:jul.ms1193@gmail.com"><Mail size={18}/> Escribirme</a><div className="social-links"><a href="https://github.com/Juliams93" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://linkedin.com/in/julia-marín-salas-b20167309" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div></section>
     </main>
-    <footer><span>Julia Marín · LVX Studio</span><span>Diseñado y construido con intención.</span></footer>
+    <footer><span>Julia Marín · LVX Studio</span><span>Haciendo cosas útiles que nacen de necesidades reales.</span></footer>
   </div>;
 }
