@@ -128,7 +128,7 @@ export default function App() {
 
       <section className="journey section" id="trayectoria">
         <div className="section-heading"><p className="eyebrow">Trayectoria</p><h2>Los proyectos que construyeron el camino.</h2></div>
-        <div className="archive-grid">{archive.map(project => <article className={`archive-card ${project.name === "FitReserve Gym" ? "archive-fitreserve" : project.name === "La Gigante de Piedra" ? "archive-gigante" : ""} ${project.images ? "archive-visual" : ""}`} key={project.name}>
+        <div className="archive-grid">{archive.map(project => <article className={`archive-card ${project.name === "FitReserve Gym" ? "archive-fitreserve" : project.name === "La Gigante de Piedra" ? "archive-gigante" : project.name === "Ada y Byte" ? "archive-ada" : ""} ${project.images ? "archive-visual" : ""}`} key={project.name}>
           {project.images && <div className="project-gallery"><img className="gallery-main" src={project.images[0]} alt={`${project.name}: panel principal`}/><div className="gallery-strip">{project.images.slice(1).map((image, index) => <img key={image} src={image} alt={`${project.name}: vista ${index + 2}`} loading="lazy"/>)}</div></div>}
           <div className="archive-copy"><p className="archive-type">{project.type}</p><h3>{project.name}</h3><p>{project.description}</p>{(project.demo || project.code) && <div className="archive-links">{project.demo && <a href={project.demo} target="_blank" rel="noreferrer">{project.demoLabel || "Ver proyecto"} <ChevronRight size={15}/></a>}{project.code && <a href={project.code} target="_blank" rel="noreferrer">Ver código <ChevronRight size={15}/></a>}</div>}</div>
         </article>)}</div>
