@@ -10,7 +10,7 @@ const products = [
 ];
 
 const archive = [
-  { name: "GimFit Reserve", type: "Web personalizada · Reservas", description: "Una experiencia digital creada a medida para que un gimnasio pueda presentar su identidad y facilitar la reserva de actividades." },
+  { name: "FitReserve Gym", type: "Web personalizada · Reservas", description: "Una experiencia digital creada a medida para que un gimnasio pueda presentar su identidad y facilitar la reserva de actividades." },
   { name: "Ada y Byte", type: "Experiencia educativa", description: "Aventura interactiva para acercar la programación a la infancia.", demo: "https://ada-byte-codeadventure.vercel.app/", code: "https://github.com/Juliams93/Ada-byte-codeadventure/tree/main/ada-byte-aventura" },
   { name: "Weather App", type: "Aplicación web", description: "Consulta meteorológica en tiempo real mediante una API externa.", demo: "https://weather-app-dusky-six-72.vercel.app/", code: "https://github.com/Juliams93/Weather-app" },
   { name: "Análisis de ventas", type: "Datos y visualización", description: "Exploración de tendencias, indicadores y comportamiento comercial.", code: "https://github.com/Juliams93/Analisis-ventas" },
