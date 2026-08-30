@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BrainCircuit, Check, ChevronRight, Footprints, Github, Heart, Home, Laptop, Lightbulb, Linkedin, Mail, Menu, MessageCircle, Moon, ShieldCheck, Sparkles, Sun, X } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, BrainCircuit, Check, ChevronRight, Cloud, Code2, Database, Footprints, Github, Heart, Home, Laptop, Lightbulb, Linkedin, Mail, Menu, MessageCircle, Moon, Palette, PenTool, ShieldCheck, Sparkles, Sun, Wrench, X } from "lucide-react";
 import "./index.css";
 
 const products = [
@@ -24,6 +24,26 @@ const capabilities = [
   { icon: ShieldCheck, title: "Privacidad desde el inicio", text: "Diseño separando datos sensibles, credenciales, interfaz pública y procesamiento local." },
 ];
 
+const experience = [
+  { period: "Actualidad", role: "IT & Digital Solutions", company: "EMR", summary: "Soporte tecnológico y mejora de procesos, uniendo atención a usuarios, herramientas corporativas y desarrollo de soluciones internas.", details: ["Soporte IT y Microsoft 365", "Gestión y apoyo con Navision", "Automatización y herramientas internas", "Rediseño y evolución de la web corporativa"] },
+  { period: "Etapa anterior", role: "Helpdesk CAU Analyst", company: "Getronics · Entorno sanitario", summary: "Soporte técnico a centros de salud y acompañamiento a usuarios en el uso de aplicaciones corporativas.", details: ["Atención y resolución de incidencias", "Soporte sobre la aplicación SIP", "Comunicación con usuarios no técnicos", "Documentación y seguimiento"] },
+  { period: "2017 — trayectoria previa", role: "Atención al cliente y operaciones", company: "Consum", summary: "Una etapa que consolidó mi capacidad de escuchar, resolver, adaptarme y trabajar con personas y equipos diversos.", details: ["Atención al cliente", "Organización y control de calidad", "Trabajo en equipo", "Adaptación operativa"] },
+];
+
+const skillGroups = [
+  { icon: Code2, title: "Frontend", skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind", "Responsive"] },
+  { icon: Database, title: "Backend & Data", skills: ["Node.js", "Express", "MongoDB", "Python", "SQL", "APIs"] },
+  { icon: Palette, title: "UX/UI & Product", skills: ["Figma", "Prototipado", "Accesibilidad", "Arquitectura de información"] },
+  { icon: Wrench, title: "IT & Tools", skills: ["Microsoft 365", "Navision", "SharePoint", "Git", "GitHub", "Postman"] },
+];
+
+const roadmap = [
+  { year: "2025", title: "Full Stack + Data", text: "Base técnica en desarrollo web y análisis de datos.", state: "done" },
+  { year: "2026", title: "IT · Development · UX/UI", text: "Experiencia profesional, producto digital y diseño centrado en las personas.", state: "now" },
+  { year: "2026—27", title: "Azure · Product Engineering", text: "Cloud, despliegue, arquitectura e integración de producto.", state: "next" },
+  { year: "2027", title: "Application Security", text: "OWASP, APIs seguras, autenticación, secretos y seguridad cloud.", state: "next" },
+];
+
 export default function App() {
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +54,7 @@ export default function App() {
     <header className="topbar">
       <a className="wordmark" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio"><img className="wordmark-logo" src="/julia-tech-logo.png" alt=""/><span>Julia Marín</span></a>
       <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Navegación principal">
-        <a href="#lvx" onClick={closeMenu}>LVX Studio</a><a href="#productos" onClick={closeMenu}>Productos</a><a href="#trayectoria" onClick={closeMenu}>Trayectoria</a><a href="#contacto" onClick={closeMenu}>Contacto</a>
+        <a href="#perfil" onClick={closeMenu}>Perfil</a><a href="#productos" onClick={closeMenu}>Proyectos</a><a href="#cv" onClick={closeMenu}>CV</a><a href="#roadmap" onClick={closeMenu}>Roadmap 2027</a><a href="#contacto" onClick={closeMenu}>Contacto</a>
       </nav>
       <div className="topbar-actions">
         <button className="icon-button" onClick={() => setDark(!dark)} aria-label={dark ? "Activar modo claro" : "Activar modo oscuro"}>{dark ? <Sun size={18} /> : <Moon size={18} />}</button>
@@ -45,15 +65,18 @@ export default function App() {
     <main>
       <section className="hero section" id="inicio">
         <div className="hero-copy">
-          <motion.p className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>Desarrollo · Datos · Inteligencia artificial</motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }}>Construyo tecnología <span>útil para la vida real.</span></motion.h1>
-          <motion.p className="hero-lead" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .16 }}>Soy Julia Marín, desarrolladora y creadora de productos digitales. Combino diseño, código, datos e IA para convertir necesidades cotidianas en soluciones humanas.</motion.p>
-          <motion.div className="hero-actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .24 }}><a className="button primary" href="#productos">Ver productos <ArrowRight size={18} /></a><a className="button secondary" href="#contacto">Hablemos</a></motion.div>
+          <motion.p className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>Full Stack Development · IT · UX/UI · Data</motion.p>
+          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }}>Julia Marín.<br/><span>De la idea a una solución útil.</span></motion.h1>
+          <motion.p className="hero-lead" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .16 }}>Diseño y desarrollo productos digitales combinando código, experiencia de usuario, datos y tecnología.</motion.p>
+          <motion.p className="current-profile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .22 }}><span>Perfil actual</span> Full Stack Developer · IT & Digital Solutions · UX/UI</motion.p>
+          <motion.div className="hero-actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .28 }}><a className="button primary" href="#productos">Ver proyectos <ArrowRight size={18} /></a><a className="button secondary" href="#cv">Explorar mi CV</a><a className="hero-icon-link" href="/curriculum.pdf" download aria-label="Descargar currículum"><ArrowDownToLine size={19}/></a><a className="hero-icon-link" href="https://github.com/Juliams93" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={19}/></a><a className="hero-icon-link" href="https://linkedin.com/in/julia-marín-salas-b20167309" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={19}/></a></motion.div>
         </div>
         <motion.div className="hero-object" initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .2 }} aria-hidden="true">
           <div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="core-card"><Sparkles size={22}/><strong>Ideas que cuidan</strong><span>Diseño · Desarrollo · IA</span></div><span className="floating-label label-one">Privacidad</span><span className="floating-label label-two">Experiencia</span><span className="floating-label label-three">Propósito</span>
         </motion.div>
       </section>
+
+      <div className="process-strip" aria-label="Mi proceso de trabajo"><span>Design</span><ArrowRight size={16}/><span>Build</span><ArrowRight size={16}/><span>Secure</span><ArrowRight size={16}/><span>Improve</span></div>
 
       <section className="idea-map section" aria-labelledby="idea-map-title">
         <div className="idea-map-heading">
@@ -120,10 +143,30 @@ export default function App() {
         </motion.article>; })}</div>
       </section>
 
-      <section className="capabilities section">
+      <section className="capabilities section" id="perfil">
         <div className="section-heading split-heading"><div><p className="eyebrow">Cómo trabajo ahora</p><h2>Más que una lista de herramientas.</h2></div><p>Investigo, diseño, construyo, pruebo y mejoro. La tecnología es el medio; la utilidad es el resultado.</p></div>
         <div className="capability-grid">{capabilities.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={24}/><h3>{title}</h3><p>{text}</p></article>)}</div>
         <div className="tool-line"><span>React</span><span>TypeScript</span><span>Node.js</span><span>APIs</span><span>Python</span><span>SQL</span><span>Vite</span><span>Figma</span><span>Vercel</span></div>
+      </section>
+
+      <section className="interactive-cv section" id="cv">
+        <div className="section-heading split-heading"><div><p className="eyebrow">CV interactivo</p><h2>Una trayectoria que conecta personas y tecnología.</h2></div><p>Mi perfil no nace de una sola disciplina. Crece al unir soporte IT, desarrollo, datos, diseño y experiencia real con usuarios.</p></div>
+        <div className="cv-layout">
+          <div className="timeline" aria-label="Experiencia profesional">{experience.map((item, index) => <motion.details className="timeline-item" key={item.role} initial={{ opacity: 0, x: -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} open={index === 0}>
+            <summary><span className="timeline-marker">{String(index + 1).padStart(2, "0")}</span><div><span className="timeline-period">{item.period}</span><h3>{item.role}</h3><p>{item.company}</p></div><ChevronRight size={20}/></summary>
+            <div className="timeline-body"><p>{item.summary}</p><ul>{item.details.map(detail => <li key={detail}><Check size={15}/>{detail}</li>)}</ul></div>
+          </motion.details>)}</div>
+          <aside className="education-card"><p className="eyebrow">Formación</p><h3>Aprender también forma parte del trabajo.</h3><div><strong>Máster en Desarrollo Web Full Stack</strong><span>Neoland</span></div><div><strong>Bootcamp de Análisis de Datos</strong><span>Adalab · 2024—2025</span></div><div><strong>Contabilidad + SAP Finanzas</strong><span>Esneca Business School</span></div><div><strong>Asistencia a la Dirección</strong><span>IES Misericordia</span></div><a className="text-link" href="/curriculum.pdf" download>Descargar CV en PDF <ArrowDownToLine size={17}/></a></aside>
+        </div>
+        <div className="skills-heading"><p className="eyebrow">Trabajo con</p><h3>Herramientas conectadas a lo que construyo.</h3></div>
+        <div className="skill-groups">{skillGroups.map(({ icon: Icon, title, skills }) => <article key={title}><Icon size={22}/><h4>{title}</h4><div>{skills.map(skill => <span key={skill}>{skill}</span>)}</div></article>)}</div>
+      </section>
+
+      <section className="roadmap section" id="roadmap">
+        <div className="roadmap-intro"><p className="eyebrow">My roadmap → 2027</p><h2>Lo que soy hoy.<br/><span>En lo que me estoy convirtiendo.</span></h2><p>Azure y Application Security aparecen aquí como aprendizaje y dirección profesional, no como experiencia ya adquirida.</p></div>
+        <div className="roadmap-track">{roadmap.map((step, index) => <motion.article className={`roadmap-step ${step.state}`} key={step.year} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }}><span className="roadmap-year">{step.year}</span><span className="roadmap-node"/><div>{step.state === "now" && <small>YOU ARE HERE</small>}<h3>{step.title}</h3><p>{step.text}</p></div></motion.article>)}</div>
+        <div className="destination"><Cloud size={26}/><div><span>Where I&apos;m going</span><strong>Product Engineer</strong><p>Development · UX/UI · Azure · Application Security</p></div></div>
+        <div className="learning-now"><span>Currently building →</span><strong>Azure Fundamentals</strong><ArrowRight size={15}/><strong>Azure Developer</strong><ArrowRight size={15}/><strong>UX/UI</strong><ArrowRight size={15}/><strong>Application Security</strong></div>
       </section>
 
       <section className="journey section" id="trayectoria">
@@ -134,7 +177,7 @@ export default function App() {
         </details>)}</div>
       </section>
 
-      <section className="about section"><div className="about-portrait"><span className="portrait-orbit" aria-hidden="true"/><img src="/julia-tech-logo.png" alt="Retrato tecnológico de Julia Marín"/><span className="portrait-note">creatividad + tecnología</span></div><div className="about-copy"><p className="eyebrow">Sobre mí</p><h2>Curiosidad, sensibilidad y ganas de hacer cosas que importen.</h2><p>Mi formación une desarrollo web full stack y análisis de datos. Hoy la aplico para crear productos completos: desde la primera idea y el diseño hasta la integración técnica, la privacidad y la puesta en marcha.</p><p>También me apasiona crear páginas web personalizadas. Disfruto escuchando una idea, entendiendo la personalidad y las necesidades de cada cliente y convirtiéndolas en una experiencia digital útil, cuidada y diferente.</p><p>FamilyHOME cambió mi manera de verme profesionalmente. Me demostró que disfruto especialmente cuando la tecnología sale de la pantalla y mejora algo concreto en la vida de una persona.</p><a className="text-link" href="/curriculum.pdf" download>Descargar currículum <ArrowRight size={17}/></a></div></section>
+      <section className="about section"><div className="about-portrait"><span className="portrait-orbit" aria-hidden="true"/><img src="/julia-tech-logo.png" alt="Retrato tecnológico de Julia Marín"/><span className="portrait-note">creatividad + tecnología</span></div><div className="about-copy"><p className="eyebrow">Beyond code</p><h2>La tecnología también necesita saber contar historias.</h2><p>Además de desarrollar, soy escritora independiente. Crear tramas, personajes y universos me ha enseñado a escuchar, ordenar ideas complejas y comunicar con intención.</p><p>Ese lado creativo vive también en mis productos: en cómo planteo una experiencia, explico una decisión y convierto una necesidad humana en una historia que se puede usar.</p><div className="writing-chips"><span><PenTool size={15}/> Storytelling</span><span>Autogestión editorial</span><span>Comunicación</span><span>Creatividad aplicada</span></div></div></section>
 
       <section className="contact section" id="contacto"><div className="contact-copy"><p className="eyebrow">Contacto</p><h2>¿Hay una necesidad que podamos convertir en una solución?</h2><p>Estoy abierta a proyectos, colaboraciones y conversaciones sobre tecnología útil, producto digital, datos e inteligencia artificial.</p></div><div className="contact-actions"><a className="button primary" href="mailto:jul.ms1193@gmail.com"><Mail size={18}/> Escribirme</a><a className="button secondary" href="https://wa.me/34665936645" target="_blank" rel="noreferrer"><MessageCircle size={18}/> WhatsApp</a><div className="social-links"><a href="https://github.com/Juliams93" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><a href="https://linkedin.com/in/julia-marín-salas-b20167309" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20}/></a></div></div></section>
     </main>
